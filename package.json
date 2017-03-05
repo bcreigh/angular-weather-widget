@@ -1,7 +1,7 @@
 {
-  "name": "angular2-skeleton",
+  "name": "angular2-weather-widget",
   "version": "1.0.0",
-  "description": "Bob's Angular2 Skeleton",
+  "description": "Bob's Angular2 Weather Widget",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "lite": "lite-server",

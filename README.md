@@ -1,1 +1,1 @@
-A starting point for Angular2 applications
+An Angular2 weather widget applications
