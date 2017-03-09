@@ -1,24 +1,35 @@
-<div class="card">
-  <div class="card-header">
-    <div class="col-xs-8">
-      <p>Inwood, WV</p>
+<div class="card" (click)="toggleUnits()" [ngStyle]="setStyles()">
+  <div class="card-header" [class.invisible]="!dataReceived">
+    <div class="col-xs-8" id="location-wrapper">
+      <p><i class="fa fa-map-marker" aria-hidden="true" id="location-icon"></i> {{ currentLocation }}</p>
     </div>
-    <div class="col-xs-4">
-      <h1>74&deg;</h1>
+    <div class="col-xs-4 text-xs-right">
+      <h1>{{ weatherData.temp | tempUnit: currentTempUnit | number:'.0-0' }}&deg;</h1>
     </div>
   </div>
   <div class="card-block">
-    <h1>Icon</h1>
-    <p>Cloudy</p>
-  </div>
-  <div class="card-footer">
-    <div class="col-xs-5">
-      <p>Wind</p>
-      <p>14 mph</p>
+    <div id="indicator" [hidden]="dataReceived">
+      <i class="fa fa-circle-o-notch fa-spin fa-4x fa-fw"></i>
+      <span class="sr-only">Loading...</span>
     </div>
-    <div class="col-xs-5 offset-xs-2">
-      <p>Humidity</p>
-      <p>45%</p>
+    <canvas id="icon" [hidden]="!dataReceived"></canvas>
+    <p>{{ weatherData.summary }}</p>
+  </div>
+  <div class="card-footer" [class.invisible]="!dataReceived">
+    <div class="row" id="detail-row">
+      <div class="col-xs-5">
+        <p>Wind</p>
+        <p>{{ weatherData.wind | speedUnit: currentSpeedUnit}}</p>
+      </div>
+      <div class="col-xs-5 offset-xs-2">
+        <p>Humidity</p>
+        <p>{{ weatherData.humidity | percent }}</p>
+      </div>
+    </div>
+    <div class="row" id="helper-row">
+      <small class="text-muted">
+      Click to switch between &deg;f/mph and &deg;c/kph
+    </small>
     </div>
   </div>
 </div>

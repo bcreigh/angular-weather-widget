@@ -1,5 +1,7 @@
 .card {
   box-shadow: 2px 2px 5px 0 rgba(0,0,0,.24);
+  transition: background-color .5s ease;
+  cursor: pointer;
 }
 
 .card,
@@ -7,17 +9,25 @@
 .card-footer {
   border: none;
   border-radius: 0;
-  background-color: #00BCD4;
-  color: #FFF;
 }
 
 .card-header,
 .card-footer {
   padding: 1rem .5rem;
+  background-color: transparent;
+}
+
+#location-wrapper {
+  font-size: 1.1rem;
+}
+
+#location-icon {
+  padding-right: .5rem;
+  font-size: 1.3rem;
 }
 
 .card-block {
-  padding: 3rem;
+  padding: 1.5rem 0;
 }
 
 .card-block,
@@ -25,7 +35,41 @@
   text-align: center;
 }
 
+.card-footer {
+  padding-bottom: .5rem;
+}
+
+#detail-row {
+  font-size: .8rem;
+}
+
+#helper-row {
+  padding-top: .5rem;
+  text-align: center;
+}
+
 p {
   margin: .2rem;
   text-transform: uppercase;
+}
+
+#indicator {
+  height: 165px;
+  position: relative;
+}
+
+#indicator i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  margin: -8% 0 0 -25%;
+}
+
+canvas {
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  display: block;
 }
